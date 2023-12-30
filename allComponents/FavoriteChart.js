@@ -13,7 +13,10 @@ const FavoriteChart = () => {
     // Check if favoriteStocks array is empty
     if (favoriteStocks.length === 0) {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View>
+                <View style={{ backgroundColor: '#1890ff', paddingVertical: 20, alignItems: 'center', marginBottom: 20 }}>
+                    <Text style={{ color: 'white', fontSize: 20 }}>Line Chart : Favorite Stocks</Text>
+                </View>
                 <Text>No favorite stocks found</Text>
             </View>
         );
