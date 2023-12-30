@@ -41,6 +41,7 @@ const RealTimeStockData = () => {
     const pageSize = 10;
 
 
+    //Api key expired 
     // useEffect(() => {
     //     const API_KEY = 'sk_466b1325bcd045ea83cd96c4e0cb94de';
     //     const symbols = [
@@ -143,7 +144,7 @@ const RealTimeStockData = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerText}>My Dashboard</Text>
+                <Text style={styles.headerText}>Real-Time Stock Data</Text>
             </View>
             <View style={styles.postheader}>
 

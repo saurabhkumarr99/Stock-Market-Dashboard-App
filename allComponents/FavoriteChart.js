@@ -3,11 +3,21 @@ import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import { LineChart } from 'react-native-chart-kit';
 
+
 const FavoriteChart = () => {
     const stockData = useSelector((state) => state.stockData) || [];
     const favorites = useSelector((state) => state.favorites) || [];
 
-    const favoriteStocks = stockData.filter((stock) => favorites.includes(stock.symbol));
+    const favoriteStocks = stockData.filter((stock) => favorites.includes(stock.symbol)) || [];
+
+    // Check if favoriteStocks array is empty
+    if (favoriteStocks.length === 0) {
+        return (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Text>No favorite stocks found</Text>
+            </View>
+        );
+    }
 
     // Extracting company names, latest prices, and highest prices from Redux favoriteStocks
     const companyNames = favoriteStocks.map((item) => item.companyName);
@@ -72,7 +82,7 @@ const FavoriteChart = () => {
                 </View>
             </View>
         </View>
-        
+
     );
 };
 
